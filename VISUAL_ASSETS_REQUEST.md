@@ -6,33 +6,89 @@
 
 ---
 
-## 1. Festival Poster: "SF CITY RHYTHMS"
+## 1. Festival Poster: "SF CITY RHYTHMS 2026"
 
-**Description:** A high-resolution, vibrant festival poster capturing the energy of the San Francisco electronic music scene with a nostalgic twist.
+**Description:** A professional-grade music festival lineup poster with a Cyberpunk / Retrowave aesthetic, set in a futuristic San Francisco.
 
-- **Primary Text:** "SF CITY RHYTHMS" (Large, stylized typography)
-- **Lineup Text:** Inzo, Carl Craig, Deep Dish, Major Lazer, SG Lewis
-- **Parody Inclusion:** Feldman's Fyre, Watson-ella
-- **Logo Integration:** Small "Sponsored by OLO" and "Fueled by Dumplings" logos in the footer area.
-- **Style Reference:** 1970s psychedelic rock poster art. Think Wes Wilson or Victor Moscoso. Flowing organic shapes, vibrant/high-contrast color palette, and "liquid" typography.
-- **Aspect Ratio:** 2:3 (Vertical Poster)
+### Visual Requirements:
+- **Theme:** Cyberpunk / Retrowave / SF 2026.
+- **Visual Style:** 
+    - Neon-drenched San Francisco skyline silhouette (Transamerica Pyramid, Salesforce Tower).
+    - Glitch art textures and digital artifacts.
+    - High-contrast color palette: **Electric Blue, Hot Pink, Cyber Lime**.
+    - Complex geometric overlays and HUD-style elements.
+- **Aspect Ratio:** 2:3 (Vertical Poster).
 
-**Prompt Suggestion:**
-> A 1970s-style psychedelic rock concert poster for "SF CITY RHYTHMS". The design features flowing, organic shapes and vibrant, trippy colors. Central stylized text reads "SF CITY RHYTHMS". A lineup list includes "Inzo, Carl Craig, Deep Dish, Major Lazer, SG Lewis" and parody names "Feldman's Fyre, Watson-ella". At the bottom, small logos for "OLO" and "Fueled by Dumplings". High detail, vintage paper texture, liquid typography, reminiscent of Fillmore West posters.
+### Typographic Hierarchy:
+- **HEADLINERS (Largest Text):** DEEP DISH, CARL CRAIG (DETROIT LOVE), RAY VOLPE, INZO.
+- **SUPPORT (Medium Text):** Austra, MxPx, Ship Wrek, Einmusik, Thomas Lennon Sings The Smiths.
+- **SPECIAL GUEST (High-Impact Highlight):** **GRAY WATSON**.
+- **THE HEART (Mid-Size Text):** Ecstatic Dance SF, Seahaven, Dutch Interior.
+- **MYSTERY GUEST (Bottom):** Mystery Guest TBA.
+
+### Branding & Footer:
+- **Logos/Text:** "Created by Fourth Owl Digital", "Sponsored by OLO", and "Fueled by Dumplings".
+- **Layout:** Clean, professional festival grid (style of Coachella, Ultra, or Tomorrowland).
+
+### Meta-Prompt (Midjourney / DALL-E 3):
+> A high-end professional music festival poster for "SF CITY RHYTHMS 2026". Visual theme: Cyberpunk and Retrowave. The background features a neon-drenched silhouette of the San Francisco skyline with glitch art textures and detailed geometric overlays. High-contrast color palette: Electric Blue, Hot Pink, and Cyber Lime. 
+> 
+> Typographic Hierarchy:
+> - HEADLINERS (Largest): DEEP DISH, CARL CRAIG (DETROIT LOVE), RAY VOLPE, INZO.
+> - SUPPORT (Medium): Austra, MxPx, Ship Wrek, Einmusik, Thomas Lennon Sings The Smiths.
+> - SPECIAL GUEST (Highlighted in a neon frame): GRAY WATSON.
+> - THE HEART (Mid-size): Ecstatic Dance SF, Seahaven, Dutch Interior.
+> - MYSTERY GUEST (Bottom): Mystery Guest TBA.
+> 
+> Footer includes logos for "Created by Fourth Owl Digital", "Sponsored by OLO", and "Fueled by Dumplings". Sharp vector-style typography, 8k resolution, cinematic lighting, ultra-detailed festival layout. --ar 2:3
+
+### Layout Instructions:
+- **Format:** Vertical (Portrait).
+- **Safe Zones:** Keep all critical text 5% away from edges.
+- **Color Profile:** RGB (Optimized for Web/OLED screens).
 
 ---
 
-## 2. Methodology Schematic: "Agentic Workflow"
+## 2. Methodology Schematic: "The Sisyphus Agentic Stack"
 
-**Description:** A technical, clean visual representing the underlying AI orchestration logic of the project.
+**Description:** A professional-grade, large-scale architecture diagram representing the actual OhMyOpenCode Sisyphus orchestration used in production environments. This is a functional blueprint reflecting the system's internal state (v6.1.0) and actual tool-use patterns from this session.
 
-- **Core Concept:** "1 Brain, Multiple Agents, Parallel streams".
-- **Visual Elements:** A central "Brain" node branching out into multiple specialized agent nodes, with visible data flow lines indicating parallel processing.
-- **Style Reference:** Technical blueprint / Patent drawing style. Clean lines, white on blueprint blue or dark technical grid background. Precise annotations.
-- **Aspect Ratio:** 16:9
+**Core Architecture Layers & Component Details:**
+
+1.  **Orchestration Layer (The Controller)**:
+    *   **Core**: `OhMyOpenCode Sisyphus` (Persona: SF Bay Area Senior Engineer).
+    *   **Logic**: 85% Action / 15% Thought Execution Ratio.
+    *   **Mechanism**: Parallel Flooding (Background Tasking).
+
+2.  **Specialist Agent Layer (Model Alignment per `oh-my-opencode.json`)**:
+    *   `librarian` (Gemini 3 Flash): External Documentation & GitHub reference mining.
+    *   `explore` (Gemini 1.5 Flash - 1M Context): Deep repository context & PARA vault mapping.
+    *   `frontend-ui-ux` (Gemini 3 Flash): React 19/Next.js 15 Implementation.
+    *   `oracle` (Gemini 3 Flash): Multi-failure debugging & Architecture review.
+    *   `document-writer` (Gemini 3 Flash): PR generation & technical briefs.
+
+3.  **Tooling & Protocol Layer**:
+    *   **Search**: `grep`, `glob`, `ast-grep`, `lsp_find_references`.
+    *   **Verification**: `lsp_diagnostics`, `npm run build`.
+    *   **Command**: `gh` (GitHub CLI), `vercel` (Vercel CLI), `bash`.
+
+4.  **Infrastructure & Deployment Layer**:
+    *   **Source**: GitHub Repositories.
+    *   **Edge**: Vercel Global Edge Network (Direct Production Deployment).
+
+**Visual Workflow (Non-Linear Parallelism):**
+- **Input**: User Request -> Sisyphus Orchestrator.
+- **Parallel Phase**:
+    *   Stream 1: `call_omo_agent(librarian)` -> Search external API specs.
+    *   Stream 2: `call_omo_agent(explore)` -> Map internal file structures.
+    *   Stream 3: `edit(src/app/page.tsx)` -> Direct UI implementation.
+- **Convergence**: All streams flow into a `Verification Gate` (Build check + Diagnostics).
+- **Output**: `vercel --prod` -> Global Availability.
+
+**Style Reference:** High-density "System Design" diagram. Dark mode (Onyx/Deep Charcoal), Cyan data paths, Amber verification nodes. Sharp, monospaced typography (JetBrains Mono style).
 
 **Prompt Suggestion:**
-> A technical blueprint schematic of an "Agentic Workflow". A central "Brain" or "Core" node is connected to multiple peripheral "Agent" nodes. Clear lines show parallel data streams flowing simultaneously. Minimalist, high-precision engineering aesthetic. White lines on a deep navy blue blueprint background. Grid lines, technical annotations, and ISO-style layout.
+> A massive, high-detail system architecture diagram for "Sisyphus v6.1.0 Agentic Stack". Centered on a "Sisyphus Core" (represented by a complex CPU/Node icon) branching into four distinct parallel execution streams. One stream labeled "librarian: Gemini 3 Flash" shows a connection to "Docs & GitHub". Another labeled "explore: Gemini 1.5 Flash (1M Context)" maps a complex graph of file nodes. A third stream shows active "Code Implementation" with "React 19 / Next.js 15" tags. All streams converge at a glowing "LSP & BUILD VERIFICATION" gate. The final vector points to a "VERCEL EDGE NETWORK" cloud icon. Professional technical-documentation style, high-density metadata, dark mode background, neon-cyan connectivity lines, crisp monospaced annotations, and ISO-standard layout. Includes small "85% EXECUTION / 15% THOUGHT" metric gauges.
 
 ---
 
