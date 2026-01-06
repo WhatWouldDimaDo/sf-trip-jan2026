@@ -62,7 +62,7 @@ export default function SFItinerary() {
         }}
         className="fixed inset-0 z-0 opacity-20"
         style={{
-          backgroundImage: `url('https://snipstock.com/wp-content/uploads/2024/12/ghostshot1_Realistic_cyberpunk_drone_shot_image_of_the_sanfrans_b5c64383-8fb8-41f0-a0d5-58f05e9813a2.png')`,
+          backgroundImage: `url('/city-landscape.jpeg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -237,58 +237,71 @@ function FestivalPoster({ events }: { events: SFEvent[] }) {
     <motion.div 
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
-      className="mb-24 relative p-12 md:p-20 border-[12px] border-orange-600 bg-orange-500 text-black overflow-hidden shadow-[0_0_100px_rgba(234,88,12,0.2)]"
+      className="mb-24 relative grid lg:grid-cols-2 gap-0 border-[12px] border-orange-600 bg-black text-white overflow-hidden shadow-[0_0_100px_rgba(234,88,12,0.2)]"
     >
-      <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
-      
-      <div className="relative z-10 text-center space-y-12">
-        <div className="space-y-2">
-          <div className="text-[12px] font-black uppercase tracking-[0.6em] mb-2">Feldman & Watson Present</div>
-          <h1 className="text-[15vw] leading-[0.8] font-black tracking-tighter uppercase italic border-y-4 border-black py-4">
-            SF TRIP 2026
-          </h1>
-          <div className="text-xl font-bold uppercase tracking-widest mt-4">Jan 23rd — Jan 26th • San Francisco, CA</div>
-        </div>
+      <div className="relative aspect-[3/4] lg:aspect-auto overflow-hidden border-b-8 lg:border-b-0 lg:border-r-[12px] border-orange-600">
+        <Image 
+          src="/festival-poster.jpeg" 
+          alt="Festival Lineup" 
+          fill 
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-orange-600/40 to-transparent" />
+      </div>
 
-        <div className="grid md:grid-cols-3 gap-12 text-center">
-          <div className="space-y-6">
-            <h3 className="text-2xl font-black uppercase border-b-2 border-black inline-block pb-1">Friday</h3>
-            <div className="space-y-2">
-              {fri.map(e => (
-                <div key={e.id} className={`text-lg font-bold leading-tight ${e.isSpecialGuest ? 'text-white bg-black px-2' : ''}`}>
-                  {e.artist.toUpperCase()}
-                </div>
-              ))}
-            </div>
+      <div className="relative p-12 md:p-16 bg-orange-500 text-black flex flex-col justify-center">
+        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
+        
+        <div className="relative z-10 space-y-12">
+          <div className="space-y-2">
+            <div className="text-[12px] font-black uppercase tracking-[0.6em] mb-2">Feldman & Watson Present</div>
+            <h1 className="text-6xl md:text-8xl font-black tracking-tighter uppercase italic border-y-4 border-black py-4">
+              SF TRIP<br/>2026
+            </h1>
+            <div className="text-lg font-bold uppercase tracking-widest mt-4">Jan 23rd — Jan 26th</div>
           </div>
-          <div className="space-y-6">
-            <h3 className="text-2xl font-black uppercase border-b-2 border-black inline-block pb-1">Saturday</h3>
-            <div className="space-y-2">
-              {sat.map(e => (
-                <div key={e.id} className={`text-lg font-bold leading-tight ${e.id === 'deep-dish' ? 'text-4xl' : ''}`}>
-                  {e.artist.toUpperCase()}
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="space-y-6">
-            <h3 className="text-2xl font-black uppercase border-b-2 border-black inline-block pb-1">Sunday</h3>
-            <div className="space-y-2">
-              {sun.map(e => (
-                <div key={e.id} className="text-lg font-bold leading-tight">
-                  {e.artist.toUpperCase()}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
 
-        <div className="pt-12 flex justify-center gap-12 text-[10px] font-black uppercase tracking-widest">
-          <span>NO REFUNDS</span>
-          <span>•</span>
-          <span>STRICT VIBE CHECK</span>
-          <span>•</span>
-          <span>DUMPLINGS FUELED</span>
+          <div className="grid grid-cols-1 gap-8">
+            <div className="flex justify-between items-baseline border-b-2 border-black/20 pb-2">
+              <h3 className="text-xl font-black uppercase">Friday</h3>
+              <div className="flex flex-wrap justify-end gap-x-4 gap-y-1 max-w-[200px]">
+                {fri.map(e => (
+                  <span key={e.id} className={`text-[10px] font-black uppercase ${e.isSpecialGuest ? 'bg-black text-white px-1' : ''}`}>
+                    {e.artist}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="flex justify-between items-baseline border-b-2 border-black/20 pb-2">
+              <h3 className="text-xl font-black uppercase">Saturday</h3>
+              <div className="flex flex-wrap justify-end gap-x-4 gap-y-1 max-w-[200px]">
+                {sat.map(e => (
+                  <span key={e.id} className="text-[10px] font-black uppercase">
+                    {e.artist}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="flex justify-between items-baseline border-b-2 border-black/20 pb-2">
+              <h3 className="text-xl font-black uppercase">Sunday</h3>
+              <div className="flex flex-wrap justify-end gap-x-4 gap-y-1 max-w-[200px]">
+                {sun.map(e => (
+                  <span key={e.id} className="text-[10px] font-black uppercase">
+                    {e.artist}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="pt-8 flex flex-wrap gap-6 text-[9px] font-black uppercase tracking-widest opacity-70">
+            <span>NO REFUNDS</span>
+            <span>•</span>
+            <span>STRICT VIBE CHECK</span>
+            <span>•</span>
+            <span>DUMPLINGS FUELED</span>
+          </div>
         </div>
       </div>
     </motion.div>
@@ -393,75 +406,14 @@ function MethodologyModal({ onClose }: { onClose: () => void }) {
                   Technical Stack Schematic
                 </div>
                 
-                <div className="space-y-3">
-                  <div className="group relative">
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500" />
-                    <div className="relative flex items-center gap-6 p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-cyan-500/40 transition-all">
-                      <div className="p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
-                        <Command className="w-6 h-6" />
-                      </div>
-                      <div>
-                        <div className="text-[9px] font-black text-cyan-500 uppercase tracking-widest mb-1">Orchestration</div>
-                        <div className="text-lg font-black text-white uppercase italic tracking-tight">Sisyphus Stack</div>
-                        <div className="text-[10px] text-zinc-500 font-mono mt-1">Specialized SF Bay Area Engineer Persona</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="group relative">
-                    <div className="relative flex items-center gap-6 p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-white/20 transition-all">
-                      <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-zinc-400">
-                        <Binary className="w-6 h-6" />
-                      </div>
-                      <div className="flex-grow grid grid-cols-2 md:grid-cols-4 gap-4">
-                        {[
-                          { name: 'librarian', model: 'Gemini 3 Flash', role: 'External Search' },
-                          { name: 'explore', model: 'Gemini 1.5 1M', role: 'Vault Analysis' },
-                          { name: 'frontend', model: 'Gemini 3 Flash', role: 'React/UI' },
-                          { name: 'writer', model: 'Gemini 3 Flash', role: 'Generation' }
-                        ].map(agent => (
-                          <div key={agent.name}>
-                            <div className="text-[8px] font-black text-white uppercase tracking-tighter mb-0.5">{agent.name}</div>
-                            <div className="text-[7px] text-cyan-500 font-mono mb-1">{agent.model}</div>
-                            <div className="text-[7px] text-zinc-600 uppercase font-bold">{agent.role}</div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="group relative">
-                    <div className="relative flex items-center gap-6 p-6 rounded-2xl bg-white/[0.02] border border-white/10">
-                      <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-zinc-400">
-                        <Terminal className="w-6 h-6" />
-                      </div>
-                      <div className="flex flex-wrap gap-3">
-                        {['gh', 'vercel', 'grep', 'glob', 'bash'].map(tool => (
-                          <span key={tool} className="px-3 py-1 rounded-lg bg-zinc-900 border border-white/5 text-[10px] font-mono text-zinc-400">
-                            {tool}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="group relative">
-                    <div className="relative flex items-center gap-6 p-6 rounded-2xl bg-white/[0.02] border border-white/10">
-                      <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-zinc-400">
-                        <Cloud className="w-6 h-6" />
-                      </div>
-                      <div className="flex gap-8">
-                        <div>
-                          <div className="text-[8px] font-black text-white uppercase mb-1">Source Control</div>
-                          <div className="text-[10px] text-zinc-400 font-bold tracking-widest uppercase">GitHub Repos</div>
-                        </div>
-                        <div>
-                          <div className="text-[8px] font-black text-white uppercase mb-1">Deployment</div>
-                          <div className="text-[10px] text-zinc-400 font-bold tracking-widest uppercase">Vercel Edge</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-white/10 group">
+                   <div className="absolute inset-0 bg-cyan-500/10 mix-blend-overlay z-10 pointer-events-none group-hover:opacity-0 transition-opacity" />
+                   <Image 
+                     src="/methodology-infographic.jpeg" 
+                     alt="Technical Schematic" 
+                     fill 
+                     className="object-cover transition-transform duration-700 group-hover:scale-105"
+                   />
                 </div>
               </div>
             </div>

@@ -24,7 +24,7 @@ export const sfEvents: SFEvent[] = [
     venue: "Regency Ballroom",
     category: "Concert",
     vibe: "Melodic Bass",
-    image: "https://images.unsplash.com/photo-1597083950211-c2e8bfc5dae0?fm=jpg&q=80&w=3840",
+    image: "/parody-tent.jpeg",
     youtubeId: "B4D884onUSk",
     bio: "Chicago-based producer blending future bass, dubstep, and euphoric melodies. Known for atmospheric synths and emotional soundscapes.",
     tickets: "https://www.axs.com/events/inzo-tickets",
