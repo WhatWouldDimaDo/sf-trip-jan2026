@@ -21,7 +21,16 @@ import {
   List,
   Cpu,
   Binary,
-  Globe
+  Globe,
+  Layers,
+  Terminal,
+  Server,
+  Code2,
+  Search,
+  Command,
+  Activity,
+  ShieldCheck,
+  Cloud
 } from "lucide-react";
 import { sfEvents, siteMeta, type SFEvent } from "./data";
 
@@ -343,102 +352,197 @@ function MethodologyModal({ onClose }: { onClose: () => void }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/95 backdrop-blur-md"
     >
       <motion.div 
-        initial={{ scale: 0.9, y: 20 }}
-        animate={{ scale: 1, y: 0 }}
-        className="bg-[#0a0a0a] border border-cyan-500/30 w-full max-w-4xl p-8 md:p-12 rounded-3xl relative overflow-hidden"
+        initial={{ scale: 0.95, y: 40, opacity: 0 }}
+        animate={{ scale: 1, y: 0, opacity: 1 }}
+        className="bg-[#050505] border border-cyan-500/20 w-full max-w-5xl rounded-[2.5rem] relative overflow-hidden shadow-[0_0_100px_rgba(6,182,212,0.1)]"
       >
-        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/grid.png')] pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/grid.png')] pointer-events-none" />
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
         
-        <div className="relative z-10">
-          <div className="flex justify-between items-start mb-12">
-            <div>
-              <div className="text-cyan-500 text-[10px] font-black uppercase tracking-[0.5em] mb-2 flex items-center gap-2">
-                <Binary className="w-4 h-4" />
-                System Schematic v4.0.2
+        <div className="relative z-10 p-8 md:p-14">
+          <div className="flex justify-between items-start mb-16">
+            <div className="space-y-1">
+              <div className="flex items-center gap-3 text-cyan-500">
+                <div className="px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/20 text-[9px] font-mono uppercase tracking-[0.2em] animate-pulse">
+                  System Live
+                </div>
+                <div className="text-[10px] font-black uppercase tracking-[0.4em]">
+                  OhMyOpenCode Sisyphus v6.1.0
+                </div>
               </div>
-              <h2 className="text-4xl font-black text-white italic tracking-tighter uppercase">The Methodology</h2>
+              <h2 className="text-5xl md:text-6xl font-black text-white italic tracking-tighter uppercase leading-none">
+                The Methodology
+              </h2>
             </div>
-            <button onClick={onClose} className="p-2 hover:bg-white/10 rounded-full transition-colors">
-              <Zap className="w-6 h-6 text-zinc-500" />
+            <button 
+              onClick={onClose}
+              className="group p-4 hover:bg-white/5 rounded-2xl transition-all border border-transparent hover:border-white/10"
+            >
+              <Zap className="w-8 h-8 text-zinc-600 group-hover:text-cyan-500 group-hover:rotate-12 transition-all" />
             </button>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-4">
-                <div className="text-cyan-500 text-[10px] font-black uppercase tracking-widest">Active Orchestrator Metrics</div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <div className="text-zinc-500 text-[9px] uppercase tracking-widest mb-1">Compute Agents</div>
-                    <div className="text-2xl font-black text-white">1 Agent</div>
-                  </div>
-                  <div>
-                    <div className="text-zinc-500 text-[9px] uppercase tracking-widest mb-1">Background Tasks</div>
-                    <div className="text-2xl font-black text-white">0 Active</div>
-                  </div>
-                  <div>
-                    <div className="text-zinc-500 text-[9px] uppercase tracking-widest mb-1">Thought Latency</div>
-                    <div className="text-2xl font-black text-white">15% Thinking</div>
-                  </div>
-                  <div>
-                    <div className="text-zinc-500 text-[9px] uppercase tracking-widest mb-1">System Load</div>
-                    <div className="text-2xl font-black text-white italic">Nominal</div>
-                  </div>
+          <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-16">
+            <div className="space-y-12">
+              <div className="relative space-y-4">
+                <div className="text-cyan-500 text-[10px] font-black uppercase tracking-[0.3em] flex items-center gap-2 mb-6">
+                  <Layers className="w-4 h-4" />
+                  Technical Stack Schematic
                 </div>
-              </div>
+                
+                <div className="space-y-3">
+                  <div className="group relative">
+                    <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500" />
+                    <div className="relative flex items-center gap-6 p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-cyan-500/40 transition-all">
+                      <div className="p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
+                        <Command className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <div className="text-[9px] font-black text-cyan-500 uppercase tracking-widest mb-1">Orchestration</div>
+                        <div className="text-lg font-black text-white uppercase italic tracking-tight">Sisyphus Stack</div>
+                        <div className="text-[10px] text-zinc-500 font-mono mt-1">Specialized SF Bay Area Engineer Persona</div>
+                      </div>
+                    </div>
+                  </div>
 
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-8 h-8 rounded bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 font-bold text-xs">01</div>
-                  <div className="text-sm font-bold text-white uppercase tracking-widest">Parallel Orchestration</div>
+                  <div className="group relative">
+                    <div className="relative flex items-center gap-6 p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-white/20 transition-all">
+                      <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-zinc-400">
+                        <Binary className="w-6 h-6" />
+                      </div>
+                      <div className="flex-grow grid grid-cols-2 md:grid-cols-4 gap-4">
+                        {[
+                          { name: 'librarian', model: 'Gemini 3 Flash', role: 'External Search' },
+                          { name: 'explore', model: 'Gemini 1.5 1M', role: 'Vault Analysis' },
+                          { name: 'frontend', model: 'Gemini 3 Flash', role: 'React/UI' },
+                          { name: 'writer', model: 'Gemini 3 Flash', role: 'Generation' }
+                        ].map(agent => (
+                          <div key={agent.name}>
+                            <div className="text-[8px] font-black text-white uppercase tracking-tighter mb-0.5">{agent.name}</div>
+                            <div className="text-[7px] text-cyan-500 font-mono mb-1">{agent.model}</div>
+                            <div className="text-[7px] text-zinc-600 uppercase font-bold">{agent.role}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="group relative">
+                    <div className="relative flex items-center gap-6 p-6 rounded-2xl bg-white/[0.02] border border-white/10">
+                      <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-zinc-400">
+                        <Terminal className="w-6 h-6" />
+                      </div>
+                      <div className="flex flex-wrap gap-3">
+                        {['gh', 'vercel', 'grep', 'glob', 'bash'].map(tool => (
+                          <span key={tool} className="px-3 py-1 rounded-lg bg-zinc-900 border border-white/5 text-[10px] font-mono text-zinc-400">
+                            {tool}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="group relative">
+                    <div className="relative flex items-center gap-6 p-6 rounded-2xl bg-white/[0.02] border border-white/10">
+                      <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-zinc-400">
+                        <Cloud className="w-6 h-6" />
+                      </div>
+                      <div className="flex gap-8">
+                        <div>
+                          <div className="text-[8px] font-black text-white uppercase mb-1">Source Control</div>
+                          <div className="text-[10px] text-zinc-400 font-bold tracking-widest uppercase">GitHub Repos</div>
+                        </div>
+                        <div>
+                          <div className="text-[8px] font-black text-white uppercase mb-1">Deployment</div>
+                          <div className="text-[10px] text-zinc-400 font-bold tracking-widest uppercase">Vercel Edge</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-zinc-500 text-xs leading-relaxed ml-12 font-mono">
-                  Deployed multi-threaded agents for concurrent vault analysis and real-time web verification.
-                </p>
-              </div>
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-8 h-8 rounded bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 font-bold text-xs">02</div>
-                  <div className="text-sm font-bold text-white uppercase tracking-widest">Data Triangulation</div>
-                </div>
-                <p className="text-zinc-500 text-xs leading-relaxed ml-12 font-mono">
-                  Cross-referenced 19hz.info, SF Sketchfest sched, and direct venue API scans for high-fidelity schedule mapping.
-                </p>
               </div>
             </div>
 
-            <div className="relative aspect-square border-2 border-dashed border-cyan-500/20 rounded-full flex items-center justify-center">
-              <motion.div 
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-4 border border-cyan-500/10 rounded-full"
-              />
-              <motion.div 
-                animate={{ rotate: -360 }}
-                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-12 border-2 border-cyan-500/5 rounded-full border-t-cyan-500/40"
-              />
-              <div className="text-center space-y-2">
-                <Cpu className="w-12 h-12 text-cyan-500 mx-auto animate-pulse" />
-                <div className="text-[10px] font-black text-cyan-500 uppercase tracking-[0.4em]">Optimized</div>
-              </div>
-              
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black px-4 text-cyan-500 text-[8px] font-mono">NODE_ALPHA_04</div>
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-black px-4 text-cyan-500 text-[8px] font-mono">RECURSION_LVL_9</div>
-            </div>
+            <div className="space-y-12">
+              <div className="p-8 rounded-3xl bg-cyan-500/5 border border-cyan-500/20 relative overflow-hidden group">
+                <div className="absolute top-0 right-0 p-4">
+                  <Activity className="w-5 h-5 text-cyan-500/30 animate-pulse" />
+                </div>
+                
+                <div className="text-cyan-500 text-[10px] font-black uppercase tracking-widest mb-8">System Performance</div>
+                
+                <div className="space-y-8">
+                  <div className="space-y-3">
+                    <div className="flex justify-between text-[9px] font-black uppercase tracking-widest">
+                      <span className="text-zinc-500">Execution Priority</span>
+                      <span className="text-white">85% Action / 15% Thought</span>
+                    </div>
+                    <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                      <motion.div 
+                        initial={{ width: 0 }}
+                        animate={{ width: '85%' }}
+                        className="h-full bg-cyan-500"
+                      />
+                    </div>
+                  </div>
 
+                  <div className="grid grid-cols-2 gap-8">
+                    <div>
+                      <div className="text-zinc-600 text-[8px] uppercase tracking-widest mb-2 font-bold">Workflow</div>
+                      <div className="text-white text-xs font-black uppercase tracking-tighter">Parallel</div>
+                      <div className="text-[7px] text-cyan-500 font-mono mt-1 italic">Non-Linear Flooding</div>
+                    </div>
+                    <div>
+                      <div className="text-zinc-600 text-[8px] uppercase tracking-widest mb-2 font-bold">Integrity</div>
+                      <div className="text-white text-xs font-black uppercase tracking-tighter">Verified</div>
+                      <div className="text-[7px] text-cyan-500 font-mono mt-1 italic">Vercel Production</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="text-white text-[10px] font-black uppercase tracking-[0.3em] flex items-center gap-2">
+                  <Code2 className="w-4 h-4 text-cyan-500" />
+                  Workflow Logic
+                </div>
+                <div className="space-y-4 font-mono text-[10px]">
+                  <div className="flex gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/5 group hover:border-cyan-500/30 transition-colors">
+                    <span className="text-cyan-500 font-bold">01</span>
+                    <span className="text-zinc-500 group-hover:text-zinc-300 transition-colors">Launch parallel background agents for vault exploration and remote search.</span>
+                  </div>
+                  <div className="flex gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/5 group hover:border-cyan-500/30 transition-colors">
+                    <span className="text-cyan-500 font-bold">02</span>
+                    <span className="text-zinc-500 group-hover:text-zinc-300 transition-colors">Synthesize multi-source inputs into production-ready React components.</span>
+                  </div>
+                  <div className="flex gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/5 group hover:border-cyan-500/30 transition-colors">
+                    <span className="text-cyan-500 font-bold">03</span>
+                    <span className="text-zinc-500 group-hover:text-zinc-300 transition-colors">Direct deployment to global edge infrastructure via Vercel CLI.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-white/5 flex justify-between items-center">
-            <div className="text-[8px] font-mono text-zinc-600">SYSLOG: 0x44F_SCHED_SUCCESS</div>
+          <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex items-center gap-6">
+              <div className="text-[8px] font-mono text-zinc-600 tracking-widest">
+                ID: SISYPHUS_JAN_2026_01
+              </div>
+              <div className="flex items-center gap-2 text-[8px] font-mono text-cyan-500/50">
+                <ShieldCheck className="w-3 h-3" />
+                AUTHENTICATED_SESSION
+              </div>
+            </div>
+            
             <button 
               onClick={onClose}
-              className="px-8 py-3 bg-cyan-500 text-black text-[10px] font-black uppercase tracking-widest hover:bg-cyan-400 transition-colors"
+              className="w-full md:w-auto px-12 py-4 bg-white text-black text-[10px] font-black uppercase tracking-[0.4em] hover:bg-cyan-500 transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.1)]"
             >
-              Confirm Blueprint
+              Exit Schematic
             </button>
           </div>
         </div>
